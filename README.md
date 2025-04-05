@@ -18,19 +18,14 @@ dependencies:
 
 ## ⚙️ Setup
 
-1. **Add the GPT script in your `web/index.html`(in head tag) file**:
+1. **Add the GPT and ad_manager script in your `web/index.html`(in head tag) file**:
 
 ```html
 <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" crossorigin="anonymous"></script>
-```
-
-2. **Create `web/ad_manager.js`** file:
-
-```html
 <script src="ad_manager.js"></script>
 ```
 
-3. **ad_manager.js** logic to handle ad loading:
+2. **Create `web/ad_manager.js`** file:
 
 ```js
 function loadGPTAd(event) {
