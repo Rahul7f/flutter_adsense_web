@@ -21,11 +21,10 @@ class AdsenseBanner extends StatelessWidget {
       );
 
       // Create the div placeholder
-      final element =
-          html.DivElement()
-            ..id = adModel.divId
-            ..style.width = '${adModel.width}px'
-            ..style.height = '${adModel.height}px';
+      final element = html.DivElement()
+        ..id = adModel.divId
+        ..style.width = '${adModel.width}px'
+        ..style.height = '${adModel.height}px';
 
       return element;
     });
