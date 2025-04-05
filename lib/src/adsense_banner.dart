@@ -14,23 +14,21 @@ class AdsenseBanner extends StatelessWidget {
     // Only register once — ideally move to a singleton setup
     // You can optimize this part later
     // ignore: undefined_prefixed_name
-    ui.platformViewRegistry.registerViewFactory(
-      adModel.divId,
-          (int viewId) {
-        // Dispatch the ad event to JS
-        html.window.dispatchEvent(
-          html.CustomEvent('load-gpt-ad', detail: adModel.toMap()),
-        );
+    ui.platformViewRegistry.registerViewFactory(adModel.divId, (int viewId) {
+      // Dispatch the ad event to JS
+      html.window.dispatchEvent(
+        html.CustomEvent('load-gpt-ad', detail: adModel.toMap()),
+      );
 
-        // Create the div placeholder
-        final element = html.DivElement()
-          ..id = adModel.divId
-          ..style.width = '${adModel.width}px'
-          ..style.height = '${adModel.height}px';
+      // Create the div placeholder
+      final element =
+          html.DivElement()
+            ..id = adModel.divId
+            ..style.width = '${adModel.width}px'
+            ..style.height = '${adModel.height}px';
 
-        return element;
-      },
-    );
+      return element;
+    });
 
     return SizedBox(
       width: adModel.width.toDouble(),
@@ -39,7 +37,6 @@ class AdsenseBanner extends StatelessWidget {
     );
   }
 }
-
 
 // To be used with a JS file loaded in index.html that handles GPT logic:
 // <script src="assets/ad_manager.js"></script>

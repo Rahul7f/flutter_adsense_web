@@ -1,13 +1,27 @@
 name: flutter_adsense_web
 description: A Flutter web package to easily integrate Google AdSense banner ads.
-version: 0.0.1
-homepage: https://github.com/your-username/adsense_flutter_web
+version: 0.0.2
+homepage: https://github.com/Rahul7f/flutter_adsense_web
 
 environment:
-  sdk: ^3.7.0
-  flutter: ">=1.17.0"
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=1.20.0"
 
 dependencies:
   flutter:
     sdk: flutter
   universal_html: ^2.2.4
+  flutter_web_plugins:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      web:
+        pluginClass: AdsenseFlutterWeb
+        fileName: adsense_flutter_web.dart
+
+
+dev_dependencies:
+  flutter_web_plugins:
+    sdk: flutter

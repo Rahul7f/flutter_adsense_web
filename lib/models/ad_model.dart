@@ -12,11 +12,6 @@ class AdModel {
   });
 
   Map<String, dynamic> toMap() {
-    return {
-      'divId': divId,
-      'slot': slotId,
-      'width': width,
-      'height': height,
-    };
+    return {'divId': divId, 'slot': slotId, 'width': width, 'height': height};
   }
 }
