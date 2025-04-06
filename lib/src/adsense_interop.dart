@@ -35,6 +35,6 @@ external GoTag? get googletag;
 JSVoid pushToCmd(JSFunction callback) {
   final cmd = googletag?.cmd;
   if (cmd != null) {
-    cmd.callMethodVarArgs("push" as JSAny ,[callback]);
+    cmd.callMethodVarArgs("push" as JSAny, [callback]);
   }
 }

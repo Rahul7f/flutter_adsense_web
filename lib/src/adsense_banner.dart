@@ -18,9 +18,10 @@ class AdsenseBanner extends StatelessWidget {
     platformViewRegistry.registerViewFactory(adModel.divId, (int viewId) {
       // Dispatch the ad event to JS
 
-      window.dispatchEvent(CustomEvent('load-gpt-ad', CustomEventInit(
-        detail: adModel.toMap().jsify()
-      )),);
+      window.dispatchEvent(
+        CustomEvent(
+            'load-gpt-ad', CustomEventInit(detail: adModel.toMap().jsify())),
+      );
 
       // Create the div placeholder
       final element = HTMLDivElement()

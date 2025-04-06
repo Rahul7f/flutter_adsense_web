@@ -33,6 +33,7 @@ class GptAdLoader {
               Future.delayed(const Duration(milliseconds: 100), innerCheckDiv);
             }
           }
+
           innerCheckDiv();
         }.toJS;
         // Get the cmd array and push directly
