@@ -48,7 +48,7 @@ import 'package:flutter_adsense_web/flutter_adsense.dart';
 AdsenseBanner(
   adModel: AdModel(
     divId: 'flutter-banner-ad',
-    slot: '/6355419/Travel/Europe/France/Paris',
+    slotId: '/6355419/Travel/Europe/France/Paris',
     width: 300,
     height: 250,
   ),
