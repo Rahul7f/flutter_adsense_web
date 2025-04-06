@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:js_interop';
 
 import 'package:flutter_adsense_web/src/adsense_interop.dart';
