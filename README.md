@@ -5,6 +5,8 @@ This package helps developers render AdSense ads using a simple widget and custo
 
 ---
 
+<img src="https://github.com/Rahul7f/flutter_adsense_web/blob/main/demo.png?raw=true" alt="drawing" width="300"/>
+
 ## 📦 Installation
 
 Add the following to your `pubspec.yaml`:
