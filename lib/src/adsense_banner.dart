@@ -12,9 +12,15 @@ class AdsenseBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Register the view
-    // Only register once — ideally move to a singleton setup
-    // You can optimize this part later
-    // ignore: undefined_prefixed_name
+    createAd();
+    return SizedBox(
+      width: adModel.width.toDouble(),
+      height: adModel.height.toDouble(),
+      child: HtmlElementView(viewType: adModel.divId),
+    );
+  }
+
+  void createAd() {
     platformViewRegistry.registerViewFactory(adModel.divId, (int viewId) {
       // Dispatch the ad event to JS
 
@@ -31,12 +37,23 @@ class AdsenseBanner extends StatelessWidget {
 
       return element;
     });
+  }
 
-    return SizedBox(
-      width: adModel.width.toDouble(),
-      height: adModel.height.toDouble(),
-      child: HtmlElementView(viewType: adModel.divId),
-    );
+  void createAdOld() {
+    // ui.platformViewRegistry.registerViewFactory(adModel.divId, (int viewId) {
+    //   // Dispatch the ad event to JS
+    //   html.window.dispatchEvent(
+    //     html.CustomEvent('load-gpt-ad', detail: adModel.toMap()),
+    //   );
+    //
+    //   // Create the div placeholder
+    //   final element = html.DivElement()
+    //     ..id = adModel.divId
+    //     ..style.width = '${adModel.width}px'
+    //     ..style.height = '${adModel.height}px';
+    //
+    //   return element;
+    // });
   }
 }
 

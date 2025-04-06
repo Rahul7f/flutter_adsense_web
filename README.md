@@ -18,42 +18,22 @@ dependencies:
 
 ## ⚙️ Setup
 
-1. **Add the GPT and ad_manager script in your `web/index.html`(in head tag) file**:
+1. **Add the GPT script in your `web/index.html`(in head tag) file**:
 
 ```html
 <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" crossorigin="anonymous"></script>
-<script src="ad_manager.js"></script>
 ```
 
-2. **Create `web/ad_manager.js`** file:
+
+2. **Register Gpt AdLoader in your main function**:
 
 ```js
-function loadGPTAd(event) {
-  const detail = event.detail;
-  const divId = detail.divId;
-  const slotId = detail.slot;
-  const width = detail.width;
-  const height = detail.height;
-
-  window.googletag = window.googletag || { cmd: [] };
-
-  googletag.cmd.push(function () {
-    const checkDiv = () => {
-      const div = document.getElementById(divId);
-      if (div) {
-        googletag.defineSlot(slotId, [width, height], divId)
-          .addService(googletag.pubads());
-        googletag.enableServices();
-        googletag.display(divId);
-      } else {
-        setTimeout(checkDiv, 100);
-      }
-    };
-    checkDiv();
-  });
+void main() {
+  // Initialize the GPT ad loader listener
+  GptAdLoader().registerGptAdLoader();
+  runApp(MyApp());
 }
 
-window.addEventListener('load-gpt-ad', loadGPTAd);
 ```
 
 ---
