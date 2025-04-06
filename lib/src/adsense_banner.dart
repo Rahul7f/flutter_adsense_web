@@ -1,5 +1,6 @@
-import 'dart:ui_web' as ui;
-import 'package:universal_html/html.dart' as html;
+import 'dart:js_interop';
+import 'package:web/web.dart';
+import 'dart:ui_web';
 import 'package:flutter/material.dart';
 import '../models/ad_model.dart';
 
@@ -14,12 +15,15 @@ class AdsenseBanner extends StatelessWidget {
     // Only register once — ideally move to a singleton setup
     // You can optimize this part later
     // ignore: undefined_prefixed_name
-    ui.platformViewRegistry.registerViewFactory(adModel.divId, (int viewId) {
+    platformViewRegistry.registerViewFactory(adModel.divId, (int viewId) {
       // Dispatch the ad event to JS
-      html.window.dispatchEvent(html.CustomEvent('load-gpt-ad', detail: adModel.toMap()),);
+
+      window.dispatchEvent(CustomEvent('load-gpt-ad', CustomEventInit(
+        detail: adModel.toMap().jsify()
+      )),);
 
       // Create the div placeholder
-      final element = html.DivElement()
+      final element = HTMLDivElement()
         ..id = adModel.divId
         ..style.width = '${adModel.width}px'
         ..style.height = '${adModel.height}px';

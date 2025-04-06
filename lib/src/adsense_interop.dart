@@ -1,6 +1,5 @@
 import 'dart:js_interop';
-
-import 'package:universal_html/js_util.dart' as js_util;
+import 'dart:js_interop_unsafe';
 
 // Define googletag interface
 @JS('googletag')
@@ -9,9 +8,8 @@ class GoTag {}
 
 extension GoTagExt on GoTag {
   // cmd is an array that accepts functions
-  external JSObject get cmd;  // Using JSObject is more flexible here
-
-  external Slot defineSlot(String adUnitPath, JSObject size, String divId);
+  external JSObject get cmd;
+  external Slot defineSlot(String adUnitPath, JSAny? size, String divId);
   external PubAds pubads();
   external void enableServices();
   external void display(String divId);
@@ -37,6 +35,6 @@ external GoTag? get googletag;
 JSVoid pushToCmd(JSFunction callback) {
   final cmd = googletag?.cmd;
   if (cmd != null) {
-    js_util.callMethod(cmd, 'push', [callback]);
+    cmd.callMethodVarArgs("push" as JSAny ,[callback]);
   }
 }
