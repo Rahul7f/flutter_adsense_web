@@ -6,8 +6,7 @@ window.addEventListener('load-gpt-ad', (e) => {
     const checkDiv = () => {
       const div = document.getElementById(divId);
       if (div) {
-        googletag.defineSlot(slot, [width, height], divId)
-          .addService(googletag.pubads());
+        googletag.defineSlot(slot, [width, height], divId).addService(googletag.pubads());
         googletag.enableServices();
         googletag.display(divId);
       } else {
