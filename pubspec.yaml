@@ -21,7 +21,3 @@ flutter:
         pluginClass: AdsenseFlutterWeb
         fileName: adsense_flutter_web.dart
 
-
-dev_dependencies:
-  flutter_web_plugins:
-    sdk: flutter
