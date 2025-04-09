@@ -1,4 +1,3 @@
-
 import 'dart:js_interop';
 import 'package:web/web.dart';
 import 'dart:ui_web';
@@ -8,7 +7,6 @@ import '../models/ad_model.dart';
 Widget createAdsenseBanner({required AdModel adModel}) {
   return _AdsenseBanner(adModel: adModel);
 }
-
 
 class _AdsenseBanner extends StatelessWidget {
   final AdModel adModel;

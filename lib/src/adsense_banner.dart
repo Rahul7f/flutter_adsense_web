@@ -3,7 +3,8 @@ import 'package:flutter/foundation.dart';
 import '../models/ad_model.dart';
 
 // Use conditional imports
-import 'adsense_banner_stub.dart' if (dart.library.html) 'adsense_banner_web.dart';
+import 'adsense_banner_stub.dart'
+    if (dart.library.html) 'adsense_banner_web.dart';
 
 class AdsenseBanner extends StatelessWidget {
   final AdModel adModel;

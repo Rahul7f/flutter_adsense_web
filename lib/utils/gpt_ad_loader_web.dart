@@ -46,6 +46,4 @@ class GptAdLoaderWeb {
   }
 }
 
-
 GptAdLoaderWeb createPlatformGptAdLoader() => GptAdLoaderWeb();
-

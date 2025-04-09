@@ -6,6 +6,8 @@ Widget createAdsenseBanner({required AdModel adModel}) {
   return SizedBox(
     width: adModel.width.toDouble(),
     height: adModel.height.toDouble(),
-    child: Center(child: Text("test"),),
+    child: Center(
+      child: Text("test"),
+    ),
   );
 }
