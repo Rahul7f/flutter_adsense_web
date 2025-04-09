@@ -1,7 +1,6 @@
 import 'dart:js_interop';
 
 import 'package:flutter_adsense_web/src/adsense_interop.dart';
-import 'package:flutter_adsense_web/utils/stub_gpt_ad_loader.dart';
 import 'package:web/web.dart';
 
 class GptAdLoaderWeb {

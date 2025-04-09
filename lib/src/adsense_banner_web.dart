@@ -11,7 +11,7 @@ Widget createAdsenseBanner({required AdModel adModel}) {
 class _AdsenseBanner extends StatelessWidget {
   final AdModel adModel;
 
-  const _AdsenseBanner({super.key, required this.adModel});
+  const _AdsenseBanner({required this.adModel});
 
   @override
   Widget build(BuildContext context) {
